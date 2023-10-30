@@ -111,16 +111,18 @@ namespace LoginForm
 
             try
             {
-                // Kiểm tra xem thư mục có tồn tại không
-                if (Directory.Exists($"\\{value}"))
-                {
-                    // Xóa thư mục
-                    Directory.Delete($"\\{value}", true);
-                    Console.WriteLine("Đã xóa thư mục thành công.");
-                }
-                else
-                {
-                    Console.WriteLine("Thư mục không tồn tại.");
+                if(value!=""){
+                    // Kiểm tra xem thư mục có tồn tại không
+                    if (Directory.Exists($"\\{value}"))
+                    {
+                        // Xóa thư mục
+                        Directory.Delete($"\\{value}", true);
+                        Console.WriteLine("Đã xóa thư mục thành công.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Thư mục không tồn tại.");
+                    }
                 }
             }
             catch (IOException ex)
